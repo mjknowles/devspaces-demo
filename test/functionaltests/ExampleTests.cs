@@ -52,7 +52,10 @@ namespace FunctionalTests
         [Fact]
         public void AboutPage_Data()
         {
-            driver.Navigate().GoToUrl("http://localhost:5000/Home/About");
+            //var dev_space = "mknowles.s.";
+            var dev_space = "";
+            var url = $"http://{dev_space}webfrontend.04fe449fd15a482aab1d.centralus.aksapp.io/Home/About";
+            driver.Navigate().GoToUrl(url);
             var text = driver.FindElementByTagName("h3").Text;
 
             Assert.Equal("Hello from webfrontend and my webapi now says something new", text);

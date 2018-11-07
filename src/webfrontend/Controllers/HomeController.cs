@@ -23,8 +23,7 @@ namespace webfrontend.Controllers
                 {
                     // Call *mywebapi*, and display its response in the page
                     var request = new System.Net.Http.HttpRequestMessage();
-                    //request.RequestUri = new Uri("http://mywebapi/api/values/1");
-                    request.RequestUri = new Uri("http://localhost:5001/api/values/1");
+                    request.RequestUri = new Uri("http://mywebapi/api/values/1");
                     if (this.Request.Headers.ContainsKey("azds-route-as"))
                     {
                         // Propagate the dev space routing header
