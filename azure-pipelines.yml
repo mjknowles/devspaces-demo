@@ -9,9 +9,16 @@ pool:
 variables:
   imageName-be: 'selenium-demo-mywebapi:$(build.buildId)'
   imageName-fe: 'selenium-demo-webfrontend:$(build.buildId)'
+  dockerId: 'mknowlescr'
 
 steps:
+- script: docker build -f ./src/mywebapi/Dockerfile -t $(imageName-be) ./src/mywebapi
+  displayName: 'docker be build'
+- script: docker build -f ./src/webfrontend/Dockerfile -t $(imageName-fe) ./src/webfrontend
+  displayName: 'docker fe build'
 - script: |
-    docker build -f ./src/mywebapi/Dockerfile -t $(imageName-be) ./src/mywebapi
-    docker build -f ./src/webfrontend/Dockerfile -t $(imageName-fe) ./src/webfrontend
-  displayName: 'docker build'
+    docker login -u $(dockerId).azurecr.io -p $(pswd) $(dockerid).azurecr.io
+    docker push $(dockerId).azurecr.io/$(imageName-be)
+    docker push $(dockerId).azurecr.io/$(imageName-fe)
+  displayName: 'container registry push'
+
