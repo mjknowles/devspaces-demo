@@ -1,6 +1,16 @@
 {
     "tasks": [
         {
+            "label": "build",
+            "command": "dotnet build",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "azds: prelaunch",
             "command": "azds",
             "args": [

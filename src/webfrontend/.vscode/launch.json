@@ -1,0 +1,58 @@
+{
+    "configurations": [ 
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.0/webfrontend.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS":"http://localhost:5000"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Launch (AZDS)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "azds: prelaunch",
+            "pipeTransport": {
+                "pipeCwd": "${workspaceRoot}",
+                "pipeProgram": "azds",
+                "pipeArgs": [
+                    "exec",
+                    "--interactive",
+                    "--on-exit-resume-up",
+                    "--"
+                ],
+                "debuggerPath": "/vsdbg/vsdbg",
+                "quoteArgs": false
+            },
+            "cwd": "/src",
+            "program": "/src/bin/Debug/netcoreapp2.0/webfrontend.dll",
+            "sourceFileMap": {
+                "/src": "${workspaceRoot}"
+            }
+        }
+    ]
+}
