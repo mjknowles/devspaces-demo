@@ -7,8 +7,11 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  imageName: 'selenium-demo:$(build.buildId)'
+  imageName-be: 'selenium-demo-mywebapi:$(build.buildId)'
+  imageName-fe: 'selenium-demo-webfrontend:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: |
+    docker build -f ./src/mywebapi/Dockerfile -t $(imageName-be) ./src/mywebapi
+    docker build -f ./src/webfrontend/Dockerfile -t $(imageName-fe) ./src/webfrontend
   displayName: 'docker build'
