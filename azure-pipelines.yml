@@ -23,4 +23,16 @@ steps:
     docker push $(dockerId).azurecr.io/$(imageName-be)
     docker push $(dockerId).azurecr.io/$(imageName-fe)
   displayName: 'container registry push'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/src/mywebapi/charts' 
+    artifactName: 'be-charts' 
+  displayName: 'publish be charts'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/src/webfrontend/charts' 
+    artifactName: 'fe-charts' 
+  displayName: 'publish fe charts'
+
+
 
