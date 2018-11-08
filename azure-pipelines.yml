@@ -25,12 +25,12 @@ steps:
   displayName: 'container registry push'
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: './src/mywebapi/charts' 
+    pathtoPublish: './src/mywebapi/charts/mywebapi' 
     artifactName: 'be-charts' 
   displayName: 'publish be charts'
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: './src/webfrontend/charts' 
+    pathtoPublish: './src/webfrontend/charts/webfrontend' 
     artifactName: 'fe-charts' 
   displayName: 'publish fe charts'
 
