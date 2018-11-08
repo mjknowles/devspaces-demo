@@ -19,7 +19,7 @@ steps:
 - script: |
     docker tag $(imageName-be) $(dockerId).azurecr.io/$(imageName-be)
     docker tag $(imageName-fe) $(dockerId).azurecr.io/$(imageName-fe)
-    docker login -u $(dockerId).azurecr.io -p $CR-PSWD $(dockerid).azurecr.io
+    docker login $(dockerid).azurecr.io -u $(dockerId) -p $(cr-pswd)
     docker push $(dockerId).azurecr.io/$(imageName-be)
     docker push $(dockerId).azurecr.io/$(imageName-fe)
   displayName: 'container registry push'
