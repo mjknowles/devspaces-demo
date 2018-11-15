@@ -33,6 +33,16 @@ steps:
     pathtoPublish: './src/webfrontend/charts/webfrontend' 
     artifactName: 'fe-charts' 
   displayName: 'publish fe charts'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: './src/webfrontend/release.yaml' 
+    artifactName: 'fe-release-values' 
+  displayName: 'publish release fe helm values'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: './src/mywebapi/release.yaml' 
+    artifactName: 'be-release-values' 
+  displayName: 'publish release be helm values'
 
 
 
