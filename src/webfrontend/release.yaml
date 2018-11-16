@@ -34,3 +34,5 @@ configurations:
         processesToKill: [dotnet, vsdbg]
         buildCommands:
         - [dotnet, build, --no-restore, -c, "${BUILD_CONFIGURATION:-Debug}"]
+ingress:
+  annotations: {}
