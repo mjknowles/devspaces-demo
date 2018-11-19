@@ -13,8 +13,6 @@ install:
     image:
       tag: $(tag)
       pullPolicy: Never
-    service:
-      type: LoadBalancer
     ingress:
       hosts:
         - fe.caf36b106d8e418bacea.centralus.aksapp.io
