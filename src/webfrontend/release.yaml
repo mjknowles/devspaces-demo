@@ -13,9 +13,11 @@ install:
     image:
       tag: $(tag)
       pullPolicy: Never
+    service:
+      type: LoadBalancer
     ingress:
       hosts:
-      - webfrontend$(hostSuffix)
+        - fe.caf36b106d8e418bacea.centralus.aksapp.io
 configurations:
   develop:
     build:
@@ -34,8 +36,3 @@ configurations:
         processesToKill: [dotnet, vsdbg]
         buildCommands:
         - [dotnet, build, --no-restore, -c, "${BUILD_CONFIGURATION:-Debug}"]
-ingress:
-  hosts:
-    - fe.caf36b106d8e418bacea.centralus.aksapp.io
-service:
-  type: LoadBalancer
