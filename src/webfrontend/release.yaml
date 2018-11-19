@@ -14,6 +14,7 @@ install:
       tag: $(tag)
       pullPolicy: Never
     ingress:
+      enabled: false
       hosts:
         - fe.caf36b106d8e418bacea.centralus.aksapp.io
 configurations:
