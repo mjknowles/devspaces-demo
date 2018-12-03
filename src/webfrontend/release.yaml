@@ -13,8 +13,11 @@ install:
     image:
       tag: $(tag)
       pullPolicy: Never
+    service:
+      type: LoadBalancer
+      port: 80
     ingress:
-      enabled: false
+      enabled: true
       hosts:
         - fe.caf36b106d8e418bacea.centralus.aksapp.io
 configurations:
