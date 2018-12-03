@@ -22,7 +22,7 @@ probes:
   enabled: false
 
 ingress:
-  enabled: true
+  enabled: false
     # kubernetes.io/tls-acme: "true"
   path: /
   # hosts:
