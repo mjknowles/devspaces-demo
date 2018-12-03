@@ -18,8 +18,7 @@ install:
         - fe.caf36b106d8e418bacea.centralus.aksapp.io
     service:
       type: LoadBalancer
-        ports:
-        - port: 80
+      port: 80
 configurations:
   develop:
     build:
