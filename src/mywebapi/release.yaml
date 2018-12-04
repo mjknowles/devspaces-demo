@@ -11,8 +11,9 @@ install:
   set:
     replicaCount: 1
     image:
+      repository: mknowlescr.azurecr.io/selenium-demo-mywebapi
       tag: $(tag)
-      pullPolicy: Never
+      pullPolicy: IfNotPresent
     ingress:
       hosts:
       - mywebapi$(hostSuffix)

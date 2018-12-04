@@ -11,8 +11,9 @@ install:
   set:
     replicaCount: 1
     image:
+      repository: mknowlescr.azurecr.io/selenium-demo-webfrontend
       tag: $(tag)
-      pullPolicy: Never
+      pullPolicy: IfNotPresent
     ingress:
       hosts:
         - fe.caf36b106d8e418bacea.centralus.aksapp.io
